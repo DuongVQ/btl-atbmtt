@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: arial;
+    background: linear-gradient(40deg, rgb(9, 255, 255), rgb(230, 68, 255));
+    color: white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 20px;
+}
+
+h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.web {
+    display: flex;
+}
+
+.item {
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 20px;
+    border-radius: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.item:hover h2 {
+    background: linear-gradient(40deg, rgb(62, 62, 255), rgb(9, 255, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+textarea {
+    height: 150px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+textarea::placeholder {
+    padding-left: 10px;
+}
+
+.item:first-child textarea{
+    width: 100%;
+    height: 200px;
+}
+
+button {
+    width: 100px;
+    height: 35px;
+    margin: 20px auto 40px;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+button:hover {
+    animation: growup ease 0.3s forwards;
+}
+
+@keyframes growup {
+    from {
+        width: 100px;
+        height: 35px;
+    }
+    to {
+        width: 120px;
+        height: 45px;
+        border-radius: 25px;
+    }
+}
+
+.inp {
+    display: flex;
+}
+
+.out {
+    display: flex;
+}
+
+.title {
+    width: 100px;
+}
+
+input[type='file'] {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    z-index: -1;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0.2px solid blueviolet;
+    border-radius: 20px;
+    height: 35px;
+    width: 110px;
+    font-size: 16px;
+    text-align: center;
+    color: blueviolet;
+}
+  
+/* Label to trigger the file input */
+.custom-file-upload label {
+    cursor: pointer;
+}
+
+.noname button {
+    margin: unset;
+}
+
+.noname {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.useGeneral {
+    font-size: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 5px; /* width of the entire scrollbar */
+  }
+  
+  /* This styles the scrollbar handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(207, 206, 206, 0.567); /* color of the scrollbar thumb */
+    border-radius: 6px; /* roundness of the scrollbar thumb */
+  }
+  
+  /* This styles the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: transparent; /* color of the scrollbar track */
+  }

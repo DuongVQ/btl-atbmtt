@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ctrl Z-Chương trình Elgammal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <link rel="stylesheet" href="ao.css">
+</head>
+<body>
+    <h1>Chương trình mã hóa và giải mã bằng phương pháp Elgammal</h1>
+
+    <div class="web">
+        <div class="item">
+            <h2>TẠO KHÓA</h2>
+            <textarea id="keys"></textarea>
+            <button onclick="generateKeys()">Tạo khóa</button>
+        </div>
+    
+        <div class="item">
+            <h2>MÃ HÓA</h2>
+            <div class="inp">
+                <div class="title">Bản rõ: </div>
+                <textarea id="plaintext" placeholder="Enter plaintext here..."></textarea>
+                <input type="file" id="choose-enCode_plainText" accept=".doc,.docx,.txt" onclick="previewFile1()">
+                <label for="choose-enCode_plainText" class="custom-file-upload">Chọn File</label>
+            </div>
+            <button onclick="encrypt()">Mã hóa</button>
+            <div class="out">
+                <div class="title">Bản mã: </div>
+                <textarea id="ciphertext"></textarea>
+                <div class="noname">
+                    <div class="btn-group d-flex flex-column">
+                        <button type="button" id="save_codeTXT-E" class="useGeneral mb-2">Lưu (as .txt)</button>
+                        <button type="button" id="save_codeDOC-E" class="useGeneral">Lưu (as .doc)</button>
+                    </div>
+                </div>
+            </div>
+            <button id="transfer">Chuyển</button>
+        </div>
+    
+        <div class="item">
+            <h2>GIẢI MÃ</h2>
+            <div class="inp">
+                <div class="title">Bản mã: </div>
+                <textarea id="ciphertextInput" placeholder="Enter ciphertext here..."></textarea>
+                <input type="file" id="choose-deCode_codeText" accept=".doc,.docx,.txt" onclick="previewFile2()">
+                <label for="choose-deCode_codeText" class="custom-file-upload">Chọn File</label>
+            </div>
+            <button onclick="decrypt()">Giải mã</button>
+            <div class="out">
+                <div class="title">Bản rõ: </div>
+                <textarea id="decryptedtext"></textarea>
+            </div>
+            <div class="noname mb-4">
+                <div class="btn-group me-5">
+                    <button type="button" id="save_plainTXT" class="useGeneral ms-1">Lưu (as .txt)</button>
+                    <button type="button" id="save_plainDOC" class="useGeneral ms-1">Lưu (as .doc)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Include Pizzip and Docxtemplater -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.5/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.0/docxtemplater.js"></script>
+    <!-- Include Mammoth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>    
+    <script src="app.js"></script>
+</body>
+</html>
+
+
